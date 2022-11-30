@@ -1,9 +1,15 @@
-const path=require('path');
+const path=require('path')
+ 
 module.exports={
    mode:"production",
-   entry:"./src/index.js",
+   entry:path.resolve(__dirname, './src/index.js'),
    output:{
-    path:path.resolve(__dirname,'dist'),
+    path:path.resolve(__dirname,'./dist'),
     filename:'output.js'
+   },
+   devServer:{
+    open:path.join(__dirname,'dist'),
+    compress:true,
+    port:4500
    }
 }
